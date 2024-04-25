@@ -1,0 +1,61 @@
+<div class="flex justify-center items-center mt-6">
+    <form [formGroup]="form" (ngSubmit)="submitForm()" class="flex space-x-2">
+        <input matInput formControlName="city" required
+               class="p-2 w-36 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+               placeholder="Enter city">
+        <button type="submit"
+                class="p-1 rounded-md bg-red-500 text-white hover:bg-red-600"
+                color="warn">
+            Search
+        </button>
+    </form>
+</div>
+
+<div class="flex justify-center items-center mt-4">
+    <div
+    
+        [ngStyle]="{
+            'background-image': isDay ? 'url(https://avatarfiles.alphacoders.com/375/375602.png)' : 'url(https://giffiles.alphacoders.com/895/8951.gif)',
+            'background-size': 'cover',
+            'background-position': 'center',
+            'width': '50%',
+            'height': '300px'
+        }"
+        class="bg-slate-800 p-6 rounded-lg text-white shadow-md transition transform animate-bounce-in"
+    >
+       
+        <div class="flex justify-between mb-4 text-sm text-gray-300">
+            <div class="flex items-center">
+                <mat-icon>wb_sunny</mat-icon>
+                <span>{{sunriseTime}}</span>
+            </div>
+            <div class="flex items-center">
+                <mat-icon>brightness_2</mat-icon>
+                <span>{{sunsetTime}}</span>
+            </div>
+        </div>
+
+        
+        <h3 class="text-2xl font-semibold mb-4 flex items-center">
+            <mat-icon>location_on</mat-icon>{{palace}}
+        </h3>
+        <div class="flex items-center space-x-4">
+            <div class="text-4xl font-bold">{{temperature}} °C</div>
+        </div>
+
+        
+        <div class="flex justify-between mt-4 text-sm text-gray-300">
+            <div class="flex items-center">
+                <mat-icon>water_drop</mat-icon>
+                <span>{{humidity}}%</span>
+            </div>
+            <div class="flex items-center">
+                <mat-icon>air</mat-icon>
+                <span>{{wind}} km/h</span>
+            </div>
+        </div>
+
+        
+        <p class="mt-2 capitalize">{{condition}}</p>
+    </div>
+</div>
